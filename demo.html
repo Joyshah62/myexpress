@@ -1,0 +1,29 @@
+<head>
+    <script>
+        function saveData(){
+            var userdata = {
+                Name: "Joy",
+                Age: "20",
+            }
+            localStorage.setItem("name","Joy");
+            localStorage.setItem("user",JSON.stringify(userdata));
+        }
+
+        function getData(){
+            var a = localStorage.getItem("name")
+            console.log(a)
+            var b = JSON.parse(localStorage.getItem("user"));
+            console.log(b);
+        }
+
+        function removeData(){
+            localStorage.removeItem("name")
+            localStorage.clear()
+        }
+    </script>
+    <body>
+            <button onclick="saveData()">Save</button>
+            <button onclick="getData()">Get</button>
+            <button onclick="removeData()">Remove</button>
+    </body>
+</head>
